@@ -127,10 +127,17 @@
               "dayGridMonth",
               "dayGridWeek",
               "listWeek",
+              "listMonth",
               "timeGridWeek"
             ],
             "label": "Default View",
             "defaultValue": "dayGridMonth"
+          },
+          {
+            "type": "text",
+            "key": "displayDays",
+            "label": "Days to Display",
+            "defaultValue": 15
           },
           {
             "type": "select",

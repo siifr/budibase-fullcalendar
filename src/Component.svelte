@@ -35,6 +35,9 @@
   export let headerOptionsCenter
   export let headerOptionsEnd
   export let defaultView
+  export let displayDays
+
+  const today = new Date();
 
   let eventsList = []
   onMount(()=>{
@@ -68,6 +71,10 @@
     locale: language,
     dayMaxEvents: true,
     initialView: defaultView,
+    visibleRange: {
+      start: today.toISOString(),
+      end: today.setDate(today.getDate() + displayDays)
+    },
     eventClick: (event)=>{
       calendarEvent({
         value: event.event
