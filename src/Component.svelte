@@ -71,9 +71,15 @@
     locale: language,
     dayMaxEvents: true,
     initialView: defaultView,
-    visibleRange: {
-      start: today.toISOString(),
-      end: today.setDate(today.getDate() + displayDays)
+    visibleRange: (currentDate) => {
+      const startDate = new Date(currentDate.valueOf())
+      const endDate = new Date(currentDate.valueOf())
+
+      endDate.setDate(endDate.getDate() + displayDays)
+      return {
+        start: startDate,
+        end: endDate
+      }
     },
     eventClick: (event)=>{
       calendarEvent({
